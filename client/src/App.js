@@ -25,7 +25,7 @@ export default class App extends Component {
     fetch(`${API_URL}/wake-up`)
       .then(res => {
         if (res.ok) {
-          return this.setState({ loading: false })  
+          return this.setState({ loading: false, images: res.images })
         }
         const msg = 'Something is went wrong with Heroku' 
         this.toast(msg, 'custom', 2000, toastColor)
